@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import time
-import io
 from openpyxl import load_workbook
 import tempfile
-import os
 import traceback
 
 # Настройка страницы
@@ -483,7 +481,7 @@ with tab3:
                     group_name,
                     russian_name,
                     latin_name,
-                    acquisition_date.strftime("%d.%m.%Y") if acquisition_date else None,
+                    acquisition_date.strftime("%Y-%m-%d") if acquisition_date else None,
                     acquisition_place,
                     supplier,
                     cost if cost > 0 else None,
